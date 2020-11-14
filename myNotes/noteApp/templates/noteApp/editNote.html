@@ -1,0 +1,34 @@
+{% extends 'noteApp/base.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align: center;">Edit Note</h1>
+<form action="" method="POST" class="form-style">
+    {% csrf_token %}
+     
+<div class="card" style="margin-bottom:25px;width: 500px;padding-left: 90px;padding-bottom:10px;padding-top: 20px;padding-right: 70px;">
+    <form>
+        <div class="form-row">
+            <div class="form-group">
+                {{form.title.label}}
+                <p>{{form.title}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                {{form.description.label}}
+                <p>{{form.description}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                {{form.color.label}}
+                {{form.color}}
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+</form>
+
+{% endblock %}
