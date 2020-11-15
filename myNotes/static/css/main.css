@@ -23,6 +23,24 @@ hr {
     
 }
 
+.card2 {
+    margin-bottom:25px;
+    width: 500px;
+    padding-left: 90px;
+    padding-bottom:10px;
+    padding-top: 20px;
+    padding-right: 70px;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 10px;
+
+}
+
+#Button{
+    width: 170px;
+    margin-left: 60px;
+}
+
 #deleteImg{
     max-width: 38px;
     position: absolute;
