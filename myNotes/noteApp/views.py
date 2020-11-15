@@ -91,11 +91,10 @@ def registerPage(request):
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
+            user = form.save()
             group = Group.objects.get(name="user")
             user.groups.add(group)
-            messages.success(request, "Your account was created successfully!")
+            messages.success(request, "Your account was successfully created!")
             return redirect('loginPage')
         else:
             messages.error(request, "")    
