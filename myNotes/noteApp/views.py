@@ -65,9 +65,14 @@ def createNote(request):
 
 @login_required(login_url='loginPage')
 def deleteNote(request, pk_delete):
-    
-    context = {}
-    return render(request, 'noteApp/notes.html', context)       
+    note = Note.objects.get(id=pk_delete)
+    if request.method == "POST":
+        note.delete()
+        return redirect('notes')
+    context = {
+        "note":note,
+    }
+    return render(request, 'noteApp/deleteNote.html', context)       
 
 @unauthenticated_user
 def loginPage(request):
