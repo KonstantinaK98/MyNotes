@@ -14,8 +14,14 @@ from django.contrib.auth.models import Group,User
 # Create your views here.
 
 @login_required(login_url='loginPage')
-def profile(request):
-    return render(request, "noteApp/profile.html")    
+def settings(request):
+    username = request.user
+    email = User.objects.all().get(username=username).email
+    context = {
+        "user":username,
+        "email":email,
+    } 
+    return render(request, "noteApp/settings.html", context)    
 
 @login_required(login_url='loginPage')
 @allowed_users(allowed_roles=['user','admin'])
