@@ -24,17 +24,4 @@
     {% endfor %}
 </div>
 
-<script>
-    document.body.style.backgroundImage = "url('{% static '/images/background2.jpg' %}')";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed";
-</script>
-
-<script>
-    if (document.body.style.backgroundImage == ""){
-        document.getElementById('myNotes').style.color = "black";
-    }
-</script>
-
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('login/', views.loginPage, name="loginPage"),
     path('register/', views.registerPage, name="registerPage"),
     path('logout/', views.logoutPage, name="logoutPage"),
+    url('change_password/', views.change_password, name='change_password'),
 ]

@@ -1,7 +1,30 @@
 {% extends 'noteApp/base.html' %}
-
+{% block title %} Settings {% endblock %}
+{% load static %}
 {% block content %}
-    
-    <h3>Username: {{user}}</h3>
-    <h3>Email: {{email}}</h3>
+<h1 style="text-align: center;">Personal Information</h1>
+<div class="card2"> <!--style="padding-left: 145px;">-->
+    <form action="" method="POST" class="form-style">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group">
+                {{form.first_name.label}}
+                <p>{{form.first_name}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                {{form.last_name.label}}
+                <p>{{form.last_name}}</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                {{form.email.label}}
+                <p>{{form.email}}</p>
+            </div>
+        </div>
+        <button type="submit" id="Button" class="btn btn-primary">Update</button>
+    </form>
+</div>
 {% endblock %}
