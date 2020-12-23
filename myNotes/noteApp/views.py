@@ -5,7 +5,7 @@ from .forms import NoteEditForm,NoteCreateForm,CreateUserForm,SettingsForm
 import datetime
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user, allowed_users, admin_only
 from django.contrib.auth.models import Group,User
@@ -23,6 +23,7 @@ def settings(request):
             form = SettingsForm(request.POST,instance=user)
             if form.is_valid():
                 form.save()
+                messages.success(request, "Your informations were successfully updated!")
                 return redirect('notes')
     context = {
         "form":form,
