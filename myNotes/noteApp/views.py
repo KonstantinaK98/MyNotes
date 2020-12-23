@@ -52,6 +52,7 @@ def editNote(request, pk_note):
             form.save()
             note.date_created = datetime.datetime.now()
             note.save()
+            messages.success(request, 'Your note was successfully updated!')
             return redirect('notes')
 
     context = {
@@ -70,6 +71,7 @@ def createNote(request):
         print(form['user'].value())
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your note was successfully created!')
             return redirect('notes')
     context = {"form":form,
                 "id":un,
@@ -81,6 +83,7 @@ def deleteNote(request, pk_delete):
     note = Note.objects.get(id=pk_delete)
     if request.method == "POST":
         note.delete()
+        messages.success(request, 'Your note was successfully deleted!')
         return redirect('notes')
     context = {
         "note":note,
