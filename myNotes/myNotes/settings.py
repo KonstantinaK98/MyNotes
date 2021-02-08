@@ -31,8 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '69g)m$8+og8bgpvn9pde7!4lr48=&-d7qb!3_h7cx-15-=%_lc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS = ['my-notes-django.herokuapp.com', '127.0.0.1']
 
 
