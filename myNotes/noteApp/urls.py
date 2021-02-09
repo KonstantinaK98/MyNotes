@@ -4,7 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.notes, name="notes"),
-    path('/', views.notes, name="notes"),
     path('settings/', views.settings, name="settings"),
     path('notes/', views.notes, name="notes"),
     path('editNote/<str:pk_note>/', views.editNote, name="editNote"),
